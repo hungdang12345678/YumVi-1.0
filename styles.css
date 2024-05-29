@@ -1,0 +1,244 @@
+
+h1 {
+    color: #47ff56;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: Trirong;
+}
+#banner {   
+    width: 100%;
+    object-fit: cover;
+}
+
+.ingredients {
+    color:aqua;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Trirong;
+}
+#navbarnsearchbar{
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    align-items: center;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    position: fixed; /* Make it stick/fixed */
+}
+#navbar {
+    display: flex;
+  
+    align-items: center;
+
+}
+
+#logo {
+    height: 110px;
+    margin: 0;
+    padding:10px 0px 10px 10px;
+}
+#logoheading {
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3em; /* Adjust as needed */
+    margin-left: 10px; /* Adjust as needed */
+    color: #fbbf2f;
+    align-items: left;
+    
+
+    
+}
+
+a {
+    text-decoration: none;
+}
+.searchbaringredient{
+    width: 200px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border: 5px solid #ffe284; /* Adjust color as needed */
+    border-radius: 15px; /* Adjust as needed */
+    padding: 5px;
+    position: absolute;
+    right: 30px; /* Adjust as needed */
+    top: 510px; /* Adjust as needed */
+    
+}
+.searchbarfood {
+    width: 300px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    border: 5px solid #ffe284; /* Adjust color as needed */
+    border-radius: 15px; /* Adjust as needed */
+    padding: 5px #ffe284;
+    margin: auto auto auto 900px;
+    position: absolute;
+    right: 10px; /* Adjust as needed */
+    top: 40px;
+}
+.bodyheading {
+    background-color: beige;
+    height: 25  px ;
+    width: 250px;
+    margin: 20px;
+    padding:20px;
+    border: 5px solid burlywood;
+    border-radius: 20px;
+}
+/* Three columns side by side */
+
+
+
+.column {
+    float: left;
+    width: 31.8%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+
+    height: 600px; /* Make the card take up the full height of the .column */
+
+  }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Make the image cover the available space without stretching */
+}
+
+  
+  /* Some left and right padding inside the container */
+  .container {
+    padding: 0 16px;
+    flex-grow: 1; /* Make the .container take up the remaining space in the .card */
+    justify-content: space-between; /* Distribute the space evenly between the items */
+    display: flex;
+    flex-direction: column;
+  }
+  .container p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent the text from wrapping to the next line */
+}
+  
+  /* Clear floats */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+  
+  .filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+
+  
+
+
+
+
+
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 

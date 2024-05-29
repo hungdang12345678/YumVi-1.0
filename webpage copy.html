@@ -1,0 +1,441 @@
+<!DOCTYPE html> <!-- use the latest version of html-->
+<html lang="en">
+
+<head>
+
+    <title>
+        YumVi - cúc kinh
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    @font-face {
+        font-family: Virgil;
+        src: url('/main/asset/Virgil.ttf');
+    }
+</style>
+
+<body>
+
+    <div class="app">
+        <header class="header">
+            <div class="navbarnsearch">
+                <div id="navbar">
+                    <a href="/main/webpage.html"><img id="logo" src="/main/asset/logo2.png" alt="logo2"></a>
+                    <a href="/main/webpage.html">
+                        <h1 class="heading" id="logoheading">
+                            YumVi
+                        </h1>
+                    </a>
+                    <div>
+                        <input type="text" class="searchbarfood" id="searchInput" onkeyup="searchFood()"
+                            placeholder="Search for food..">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+        <img id="banner" src="/main/asset/frontpage.jpg" alt="banner" height="350">
+        <div>
+            <h2 class="bodyheading">Trong tủ lạnh có gì?</h2>
+            <!-- Control buttons -->
+            <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+                <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+                <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+                <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+            </div>
+
+            <!--         
+        <input type="text" class="searchbaringredient" id="searchIngredient" onkeyup="searchIngredient()"
+            placeholder="Search for ingredient..">
+        </span>
+        <div id="ingredientButtons"></div> -->
+            <div class="container">
+                <div class="filterDiv mamruoc bachi sa">
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <img src="bachikhomamruoc.jpg" alt="Jane" style="width:100%">
+                                <div class="container">
+                                    <h2>Ba chỉ kho mắm ruốc</h2>
+                                    <p class="title">Độ khó: Dễ &amp; Thời gian nấu 30p</p>
+                                    <p>Thịt ba chỉ kho mắm ruốc là món ăn quen thuộc, đậm đà bản sắc của người Huế.</p>
+                                    <p><button class="button">Công thức</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filterDiv me vit">
+                        <div class="column">
+                            <div class="card">
+                                <img src="Vitgiacay.jpg" alt="Jane" style="width:100%">
+                                <div class="container">
+                                    <h2>Vịt nấu giả cầy chuẩn vị Bắc</h2>
+                                    <p class="title">Độ khó: Trung bình &amp; Thời gian nấu 60p</p>
+                                    <p>Thịt vịt mềm mà không bở, nước sóng sánh màu vàng mơ, vị chua thanh từ mẻ, đậm đà
+                                        từ
+                                        mắm tôm, dậy mùi thơm của riềng kích thích vị giác. Món này ăn cùng cơm trắng
+                                        hay
+                                        bún đều đưa miệng.</p>
+                                    <p><button class="button">Công thức</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filterDiv nghe canuc">
+                        <div class="column">
+                            <div class="card">
+                                <img src="canuckhonghe.jpg" alt="Jane" style="width:100%">
+                                <div class="container">
+                                    <h2>Cá nục kho nghệ</h2>
+                                    <p class="title">Độ khó: Trung bình &amp; Thời gian nấu 60p</p>
+                                    <p>Nghệ không còn mùi hăng sau khi kho, tôn lên mùi hương đặc trưng của cá nục,skasd
+                                        ád.
+                                    </p>
+                                    <p><button class="button">Công thức</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filterDiv ga sa"></div>
+                    <div class="column">
+                        <div class="card">
+                            <img src="gakhosaot.jpg" alt="Jane" style="width: 100% ">
+                            <div class="container">
+                                <h2>Gà kho sả ớt</h2>
+                                <p class="title">Độ khó: Dễ &amp; Thời gian nấu 40p </p>
+                                <p>Thịt gà mềm vàng óng, đậm vị, dậy mùi thơm đặc trưng của sả, gừng, nước sốt sánh lại.
+                                </p>
+                                <p><button class="button">Công thức</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterDiv mi ga"></div>
+                <div class="column">
+                    <div class="card">
+                        <img src="miquang.jpg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Mì quảng</h2>
+                            <p class="title">Độ khó: Khó &amp; Thời gian nấu 60p</p>
+                            <p>Đây là món ăn đặc trưng ẩm thực của người dân Quảng Nam - Đà Nẵng.</p>
+                            <p><button class="button">Công thức</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="test">
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+        <div>
+            h
+
+        </div>
+    </div>
+    </div>
+    <div>
+        <ul>
+            <li><span>YumVi</span></li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+    </div>
+</body>
+<script scr="script.js"></script>
+</htlm>
